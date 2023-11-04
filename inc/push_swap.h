@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/25 19:25:10 by angomes-          #+#    #+#             */
+/*   Updated: 2023/11/01 16:22:21 by angomes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
+# define EXIT_OK 0
+# define EXIT_FAIL 1
+# define ERROR (-1)
+
+# include "../libraries/libft/inc/libft.h"
+# include <stdio.h>
+
+typedef struct s_stack
+{
+	int		value;
+	struct s_stack	*next;
+	struct s_stack	*previus;
+}			t_stack;
+
+
+#endif
