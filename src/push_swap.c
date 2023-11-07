@@ -13,20 +13,51 @@
 
 #include "../inc/push_swap.h"
 
-void print_stack(t_stack *stack)
+void print_stack(t_stack **stack) {
+
+	t_stack *current;
+
+	current = *stack;
+	while (current)
+	{
+		printf("%d\n", current->value);
+		current = current->next;
+	}
+}
+
+void init_stack(t_stack **stack, char **args)
 {
-  printf("%d", stack->value);
+	int i;
+	i = 0;
+
+	while (args[i])
+	{
+		new_node(stack, ft_atoi(args[i]));
+		i++;
+	}
+	//ft_printf("%d\n", stack->value);
 }
 
 int	main(int ac, char **av)
 {
+	t_stack *a;
+	char **str;
+
+	a = NULL;
 	if (ac >= 3)
 	{
-		if(valid)
+		str = &av[1];
+		if(is_valid_args(str))
+		{
+			init_stack(&a, str);
+			print_stack(&a);
+			ft_printf("its ok\n");
+		}
+		else
+			ft_printf("invalid args\n");
 	}
-  t_stack stack_a;
-  t_stack stack_b;
-
-
-  print_stack(stack_a.next);
+	else
+		ft_printf("We have a problem\n");
+	free_node(a);
+	return(EXIT_OK);
 }

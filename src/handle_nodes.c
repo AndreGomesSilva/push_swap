@@ -25,14 +25,14 @@ t_stack *last_node(t_stack *stack)
 	return (temp_node);
 }
 
-t_stack *new_node(t_stack **stack, int value)
+void new_node(t_stack **stack, int value)
 {
   t_stack *node;
   t_stack *temp_node;
 
-  node = (t_stack *)ft_calloc(1, sizeof(t_stack));
+  node = (t_stack*) ft_calloc(1, sizeof(t_stack));
   if (!node)
-    return (NULL);
+    return ;
   node->next = NULL;
   node->value = value;
   if (*stack == NULL)
@@ -45,6 +45,6 @@ t_stack *new_node(t_stack **stack, int value)
 	 temp_node = last_node(*stack);
 	 temp_node->next = node;
 	 node->previus = temp_node;
+	 node->next = NULL;
   }
-  return (node);
 }

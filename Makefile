@@ -14,17 +14,20 @@ HEADERS = -I ./inc
 CFLAGS = -Wall -Wextra -Werror
 LEAKS = valgrind --leak-check=full --show-leak-kinds=all
 RM = rm -f
-CC = cc
+CC = cc -g
 SRCS_DIR = src
 OBJS_DIR = obj
 BIN = push_swap
 NAME = $(BIN)
 LIBFT_PATH = libraries/libft
 LIBFT = $(LIBFT_PATH)/libft.a
-ARGS = ./infile "ls -l" "" ./outfile
+ARGS = 12 32
 
 FILES =\
 	push_swap \
+	handle_nodes \
+	check_args \
+	handle_free \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
 
@@ -40,7 +43,7 @@ $(LIBFT):
 	$(MAKE)	-C $(LIBFT_PATH)
 
 play: all
-	$(LEAKS) ./$(BIN) $(ARGS)
+	./$(BIN) $(ARGS)
 
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)

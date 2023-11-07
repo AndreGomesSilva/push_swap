@@ -27,4 +27,9 @@ typedef struct s_stack
 }			t_stack;
 
 
+int is_valid_args(char **str);
+void new_node(t_stack **stack, int value);
+t_stack *last_node(t_stack *stack);
+int free_node(t_stack *head);
+
 #endif

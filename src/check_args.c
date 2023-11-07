@@ -4,7 +4,7 @@
 
 #include "../inc/push_swap.h"
 
-int number_is_equal(char **str)
+static int number_is_equal(char **str)
 {
 	int i;
 	int j;
@@ -24,7 +24,7 @@ int number_is_equal(char **str)
 	return (0);
 }
 
-int args_is_digits(char **str)
+static int args_is_digits(char **str)
 {
 	int i;
 	int j;
