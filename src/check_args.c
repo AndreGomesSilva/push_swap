@@ -15,7 +15,7 @@ static int number_is_equal(char **str)
 		j = i + 1;
 		while (str[j])
 		{
-			if (atoi(str[i]) == atoi(str[j]))
+			if (ft_atoi(str[i]) == ft_atoi(str[j]))
 				return (1);
 			j++;
 		}

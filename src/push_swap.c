@@ -35,12 +35,12 @@ void init_stack(t_stack **stack, char **args)
 		new_node(stack, ft_atoi(args[i]));
 		i++;
 	}
-	//ft_printf("%d\n", stack->value);
 }
 
 int	main(int ac, char **av)
 {
 	t_stack *a;
+	//t_stack *b;
 	char **str;
 
 	a = NULL;
@@ -50,8 +50,7 @@ int	main(int ac, char **av)
 		if(is_valid_args(str))
 		{
 			init_stack(&a, str);
-			print_stack(&a);
-			ft_printf("its ok\n");
+			ft_printf("%d\n", listlen(&a));
 		}
 		else
 			ft_printf("invalid args\n");

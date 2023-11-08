@@ -12,6 +12,21 @@
 
 #include "../inc/push_swap.h"
 
+int	listlen(t_stack **stack)
+{
+	int count;
+	t_stack *current;
+
+	count = 0;
+	current = *stack;
+	while (current)
+	{
+		count++;
+		current = current->next;
+	}
+	return (count);
+}
+
 t_stack *last_node(t_stack *stack)
 {
 	t_stack *temp_node;

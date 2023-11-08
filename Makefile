@@ -28,6 +28,9 @@ FILES =\
 	handle_nodes \
 	check_args \
 	handle_free \
+	swap \
+	rotate \
+	push \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
 
