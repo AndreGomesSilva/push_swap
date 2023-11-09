@@ -49,8 +49,12 @@ int	main(int ac, char **av)
 		str = &av[1];
 		if(is_valid_args(str))
 		{
+			long int z;
+
+			z = ft_strtol(av[1], NULL, 10);
+			printf("%ld\n", z);
 			init_stack(&a, str);
-			ft_printf("%d\n", listlen(&a));
+			//ft_printf("%d\n", listlen(&a));
 		}
 		else
 			ft_printf("invalid args\n");

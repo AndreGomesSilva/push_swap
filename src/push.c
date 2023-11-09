@@ -16,7 +16,7 @@ void push_to_stack(t_stack **src, t_stack **dest)
 	first_dest = *dest;
 	next_src = first_src->next;
 	if (next_src)
-		next_src->previus = NULL;
+		next_src->previous = NULL;
 	*src = next_src;
 	if (!*dest) {
 		*dest = first_src;
@@ -26,6 +26,6 @@ void push_to_stack(t_stack **src, t_stack **dest)
 	{
 		first_src->next = first_dest;
 		*dest = first_src;
-		first_dest->previus = first_src;
+		first_dest->previous = first_src;
 	}
 }

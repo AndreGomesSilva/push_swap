@@ -23,7 +23,7 @@ typedef struct s_stack
 {
 	int		value;
 	struct s_stack	*next;
-	struct s_stack	*previus;
+	struct s_stack	*previous;
 }			t_stack;
 
 
@@ -35,5 +35,7 @@ void swap_node(t_stack **stack);
 void rotate_list(t_stack **stack);
 void push_to_stack(t_stack **src, t_stack **dest);
 int	listlen(t_stack **stack);
+void reverse_rotate(t_stack	**stack);
+long int ft_strtol(char *str, char **endptr, int base);
 
 #endif

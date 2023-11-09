@@ -31,6 +31,8 @@ FILES =\
 	swap \
 	rotate \
 	push \
+	reverse_rotate \
+	ft_strtol \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
 

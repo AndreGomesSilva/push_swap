@@ -13,10 +13,10 @@ void swap_node(t_stack **stack)
 	first_node = *stack;
 	second_node = first_node->next;
 	next_node = second_node->next;
-	second_node->previus = NULL;
+	second_node->previous = NULL;
 	second_node->next = first_node;
 	first_node->next = next_node;
-	next_node->previus = first_node;
-	first_node->previus = second_node;
+	next_node->previous = first_node;
+	first_node->previous = second_node;
 	*stack = second_node;
 }

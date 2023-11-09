@@ -35,7 +35,9 @@ static int args_is_digits(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			if (!ft_isdigit(str[i][j]))
+			if(((str[i][j] == '-') || (str[i][j]) == '+')  && (!ft_isdigit(str[i][j + 1])))
+				return (0);
+			if ((!ft_isdigit(str[i][j]) && ((str[i][j] != '-') && (str[i][j] != '+'))))
 				return (0);
 			j++;
 		}

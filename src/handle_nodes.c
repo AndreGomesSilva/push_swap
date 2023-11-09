@@ -52,14 +52,14 @@ void new_node(t_stack **stack, int value)
   node->value = value;
   if (*stack == NULL)
   {
-    node->previus = NULL;
+    node->previous = NULL;
     *stack = node;
   }
   else
   {
 	 temp_node = last_node(*stack);
 	 temp_node->next = node;
-	 node->previus = temp_node;
+	 node->previous = temp_node;
 	 node->next = NULL;
   }
 }
