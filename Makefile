@@ -33,6 +33,7 @@ FILES =\
 	push \
 	reverse_rotate \
 	ft_strtol \
+	sort_short_numbers \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
 

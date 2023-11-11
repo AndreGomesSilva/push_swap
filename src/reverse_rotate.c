@@ -4,7 +4,7 @@
 
 #include "../inc/push_swap.h"
 
-void reverse_rotate(t_stack	**stack)
+void reverse_rotate(t_stack	**stack, char *flag)
 {
 	t_stack  *first_node;
 	t_stack  *end_node;
@@ -18,4 +18,5 @@ void reverse_rotate(t_stack	**stack)
 	end_node->previous = NULL;
 	previous_node->next = NULL;
 	*stack = end_node;
+	ft_putstr_fd(flag, STDOUT_FILENO);
 }

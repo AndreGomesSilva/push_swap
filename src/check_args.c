@@ -4,6 +4,23 @@
 
 #include "../inc/push_swap.h"
 
+int 	check_limits(char **str)
+{
+	long int number;
+	int i;
+
+	i = 0;
+	number = 0;
+	while (str[i])
+	{
+		number = ft_strtol(str[i], NULL, 10);
+		if (number > LIMIT_MAX_INT || number < LIMIT_MIN_INT)
+			return (FALSE);
+		i++;
+	}
+	return(TRUE);
+}
+
 static int number_is_equal(char **str)
 {
 	int i;
@@ -16,12 +33,12 @@ static int number_is_equal(char **str)
 		while (str[j])
 		{
 			if (ft_atoi(str[i]) == ft_atoi(str[j]))
-				return (1);
+				return (TRUE);
 			j++;
 		}
 		i++;
 	}
-	return (0);
+	return (FALSE);
 }
 
 static int args_is_digits(char **str)
@@ -36,24 +53,24 @@ static int args_is_digits(char **str)
 		while (str[i][j])
 		{
 			if(((str[i][j] == '-') || (str[i][j]) == '+')  && (!ft_isdigit(str[i][j + 1])))
-				return (0);
+				return (FALSE);
 			if ((!ft_isdigit(str[i][j]) && ((str[i][j] != '-') && (str[i][j] != '+'))))
-				return (0);
+				return (FALSE);
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	return (TRUE);
 }
 
 int is_valid_args(char **str)
 {
-	if (args_is_digits(str))
+	if (check_limits(str) && args_is_digits(str))
 	{
 		if (!number_is_equal(str))
 		{
-			return (1);
+			return (TRUE);
 		}
 	}
-	return (0);
+	return (FALSE);
 }

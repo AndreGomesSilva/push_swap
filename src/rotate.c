@@ -4,13 +4,13 @@
 
 #include "../inc/push_swap.h"
 
-void rotate_list(t_stack **stack)
+void rotate_list(t_stack **stack, char *flag)
 {
 	t_stack *first_node;
 	t_stack *next_node;
 	t_stack *end_node;
 
-	if(listlen(stack) < 3)
+	if(list_len(stack) < 3)
 		return;
 	first_node = *stack;
 	next_node = first_node->next;
@@ -20,4 +20,5 @@ void rotate_list(t_stack **stack)
 	first_node->next = NULL;
 	next_node->previous = NULL;
 	*stack = next_node;
+	ft_putstr_fd(flag, STDOUT_FILENO);
 }

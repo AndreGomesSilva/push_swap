@@ -12,7 +12,7 @@
 
 #include "../inc/push_swap.h"
 
-int	listlen(t_stack **stack)
+int	list_len(t_stack **stack)
 {
 	int count;
 	t_stack *current;

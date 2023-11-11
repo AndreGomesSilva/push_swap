@@ -4,7 +4,7 @@
 
 #include "../inc/push_swap.h"
 
-void swap_node(t_stack **stack)
+void swap_node(t_stack **stack, char *flag)
 {
 	t_stack *second_node;
 	t_stack *first_node;
@@ -19,4 +19,5 @@ void swap_node(t_stack **stack)
 	next_node->previous = first_node;
 	first_node->previous = second_node;
 	*stack = second_node;
+	ft_putstr_fd(flag, STDOUT_FILENO);
 }

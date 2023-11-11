@@ -40,21 +40,24 @@ void init_stack(t_stack **stack, char **args)
 int	main(int ac, char **av)
 {
 	t_stack *a;
-	//t_stack *b;
+	t_stack *b;
 	char **str;
 
 	a = NULL;
+	b = NULL;
 	if (ac >= 3)
 	{
 		str = &av[1];
 		if(is_valid_args(str))
 		{
-			long int z;
-
-			z = ft_strtol(av[1], NULL, 10);
-			printf("%ld\n", z);
 			init_stack(&a, str);
-			//ft_printf("%d\n", listlen(&a));
+			print_stack(&a);
+			if (ac <= 6)
+				short_numbers(&a, &b);
+//			else
+//				large_numbers(&a, &b);
+			ft_printf("-------------\n");
+			print_stack(&a);
 		}
 		else
 			ft_printf("invalid args\n");
