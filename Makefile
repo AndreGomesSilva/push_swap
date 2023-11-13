@@ -36,6 +36,7 @@ FILES =\
 	sort_short_numbers \
 	handle_large_numbers \
 	middle_value \
+	check_order \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
 

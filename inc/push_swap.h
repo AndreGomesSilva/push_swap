@@ -32,7 +32,6 @@ typedef struct s_stack
 	int 	chunk;
 }			t_stack;
 
-
 int is_valid_args(char **str);
 void new_node(t_stack **stack, int value);
 t_stack *last_node(t_stack *stack);
@@ -46,5 +45,6 @@ void short_numbers(t_stack **a, t_stack **b);
 long int ft_strtol(char *str, char **endptr, int base);
 void move_numbers(t_stack **a,t_stack **b);
 void set_middle_value(t_stack **stack);
+int 	check_ascending_order(t_stack **a, int chunk);
 
 #endif

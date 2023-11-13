@@ -54,15 +54,18 @@ int	main(int ac, char **av)
 		{
 			init_stack(&a, str);
 			print_stack(&a);
-			if (ac <= 6)
+			if (ac <= 4)
 				short_numbers(&a, &b);
 //			else
-//				large_numbers(&a, &b);
-			move_numbers(&a, &b);
-			ft_printf("------------------------------\n");
-			print_stack(&a);
-			ft_printf("------------------------------\n");
-			print_stack(&b);
+//				move_numbers(&a, &b);
+//			ft_printf("------------------------------\n");
+//			print_stack(&a);
+//			ft_printf("------------------------------\n");
+//			print_stack(&b);
+			if(check_ascending_order(&a, 0))
+				ft_printf("true");
+			else
+				ft_printf("false");
 		}
 		else
 			ft_printf("invalid args\n");
