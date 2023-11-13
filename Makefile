@@ -14,7 +14,7 @@ HEADERS = -I ./inc
 CFLAGS = -Wall -Wextra -Werror
 LEAKS = valgrind --leak-check=full --show-leak-kinds=all
 RM = rm -f
-CC = cc -g
+CC = gcc -g
 SRCS_DIR = src
 OBJS_DIR = obj
 BIN = push_swap
@@ -34,6 +34,8 @@ FILES =\
 	reverse_rotate \
 	ft_strtol \
 	sort_short_numbers \
+	handle_large_numbers \
+	middle_value \
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
 

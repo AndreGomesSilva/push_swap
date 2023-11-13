@@ -37,6 +37,7 @@ static void simple_sort(t_stack **a)
 	else if (bigger_node(second_node, first_node) && bigger_node(first_node, third_node))
 		reverse_rotate(a, "rra\n");
 }
+
 void five_sort(t_stack **a, t_stack **b)
 {
 	push_to_stack(a, b, "pb\n");

@@ -10,7 +10,7 @@ void push_to_stack(t_stack **src, t_stack **dest, char *flag)
 	t_stack *first_dest;
 	t_stack  *next_src;
 
-	if(!*src)
+	if(!src || !*src)
 		return ;
 	first_src = *src;
 	first_dest = *dest;
