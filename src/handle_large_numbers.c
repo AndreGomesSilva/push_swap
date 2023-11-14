@@ -4,14 +4,14 @@
 
 #include "../inc/push_swap.h"
 
-static int	check_node_small(t_stack *stack, int check)
+static int	check_node_small(t_stack *stack, int check, int chunk)
 {
 	t_stack *lst;
 
 	lst = stack;
 	while (lst)
 	{
-		if (lst->value < check)
+		if (lst->value < check && lst->chunk == chunk)
 			return (TRUE);
 		lst = lst->next;
 	}
@@ -40,9 +40,8 @@ void	mark_chunk(t_stack **stack)
 	}
 }
 
-static void move_the_smallest(t_stack **a, t_stack **b)
+static void move_the_smallest(t_stack **a, t_stack **b, int chunk)
 {
-	int number_node;
 	int mid;
 	t_stack *first_node;
 	t_stack *end_node;
@@ -50,8 +49,7 @@ static void move_the_smallest(t_stack **a, t_stack **b)
 	first_node = *a;
 	mid = first_node->middle_value;
 	end_node = last_node(first_node);
-	number_node = list_len(a);
-	while(number_node > 3)
+	while(check_node_small(first_node, mid, chunk))
 	{
 		while (first_node->value < mid)
 		{
@@ -64,23 +62,30 @@ static void move_the_smallest(t_stack **a, t_stack **b)
 			push_to_stack(a, b, "pb\n");
 			end_node = last_node(first_node);
 		}
-		if(first_node->value >= mid && check_node_small(first_node, mid))
+		if(first_node->value >= mid && check_node_small(first_node, mid, chunk))
 		{
 			rotate_list(a, "ra\n");
 			first_node = *a;
 		}
-		number_node--;
 	}
 }
 
 void move_numbers(t_stack **a,t_stack **b)
 {
-	set_middle_value(a);
-	move_the_smallest(a, b);
-	mark_chunk(b);
-	set_middle_value(a);
-	move_the_smallest(a, b);
-	mark_chunk(b);
-	set_middle_value(a);
-	short_numbers(a, b);
+	int great_chunk_a;
+	t_stack *first_node;
+
+	first_node = *a;
+	great_chunk_a = first_node->chunk;
+	while (list_len(a) > 3)
+	{
+		set_middle_value(a);
+		move_the_smallest(a, b, 0);
+		mark_chunk(b);
+	}
+	short_numbers(a);
+	init_sort_chunk(a, b);
+	init_sort_chunk(a, b);
+	init_sort_chunk(a, b);
+
 }

@@ -40,11 +40,16 @@ void swap_node(t_stack **stack, char *flag);
 void rotate_list(t_stack **stack, char* flag);
 void push_to_stack(t_stack **src, t_stack **dest, char *flag);
 int	list_len(t_stack **stack);
+int	list_len_chunk(t_stack **stack, int chunk);
 void reverse_rotate(t_stack	**stack, char *flag);
-void short_numbers(t_stack **a, t_stack **b);
+void short_numbers(t_stack **a);
 long int ft_strtol(char *str, char **endptr, int base);
 void move_numbers(t_stack **a,t_stack **b);
 void set_middle_value(t_stack **stack);
+int	check_chunk_great_node(t_stack *stack, int check, int chunk);
+void set_middle_chunk(t_stack **stack, int chunk);
 int 	check_ascending_order(t_stack **a, int chunk);
+int 	check_descending_order(t_stack **b, int chunk);
+void init_sort_chunk(t_stack **a, t_stack**b);
 
 #endif

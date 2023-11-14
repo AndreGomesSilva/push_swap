@@ -33,10 +33,14 @@ FILES =\
 	push \
 	reverse_rotate \
 	ft_strtol \
-	sort_short_numbers \
+	tiny_sort \
 	handle_large_numbers \
 	middle_value \
 	check_order \
+	handle_chunk_b \
+	middle_value_chunk \
+	sort_chunk_support \
+
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
 

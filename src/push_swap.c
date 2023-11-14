@@ -20,7 +20,7 @@ void print_stack(t_stack **stack) {
 	current = *stack;
 	while (current)
 	{
-		ft_printf("value -> %d\n", current->value);
+		ft_printf("value ->->-> %d\n", current->value);
 		ft_printf("mid -> %d\n", current->middle_value);
 		ft_printf("chunk -> %d\n", current->chunk);
 		current = current->next;
@@ -53,19 +53,15 @@ int	main(int ac, char **av)
 		if(is_valid_args(str))
 		{
 			init_stack(&a, str);
-			print_stack(&a);
-			if (ac <= 4)
-				short_numbers(&a, &b);
-//			else
-//				move_numbers(&a, &b);
-//			ft_printf("------------------------------\n");
 //			print_stack(&a);
-//			ft_printf("------------------------------\n");
-//			print_stack(&b);
-			if(check_ascending_order(&a, 0))
-				ft_printf("true");
+			if (ac <= 4)
+				short_numbers(&a);
 			else
-				ft_printf("false");
+				move_numbers(&a, &b);
+			ft_printf("------------------------------\n");
+			print_stack(&a);
+			ft_printf("------------------------------\n");
+			print_stack(&b);
 		}
 		else
 			ft_printf("invalid args\n");
