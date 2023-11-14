@@ -50,6 +50,8 @@ int	check_chunk_great_node(t_stack *stack, int check, int chunk);
 void set_middle_chunk(t_stack **stack, int chunk);
 int 	check_ascending_order(t_stack **a, int chunk);
 int 	check_descending_order(t_stack **b, int chunk);
-void init_sort_chunk(t_stack **a, t_stack**b);
+void init_sort_chunk_b(t_stack **a, t_stack**b);
+void init_sort_chunk_a(t_stack **a, t_stack **b);
+int great_chunk_value(t_stack **a, t_stack **b);
 
 #endif

@@ -58,10 +58,10 @@ int	main(int ac, char **av)
 				short_numbers(&a);
 			else
 				move_numbers(&a, &b);
-			ft_printf("------------------------------\n");
-			print_stack(&a);
-			ft_printf("------------------------------\n");
-			print_stack(&b);
+//			ft_printf("------------------------------\n");
+//			print_stack(&a);
+//			ft_printf("------------------------------\n");
+//			print_stack(&b);
 		}
 		else
 			ft_printf("invalid args\n");

@@ -40,6 +40,7 @@ FILES =\
 	handle_chunk_b \
 	middle_value_chunk \
 	sort_chunk_support \
+	handle_chunk_a \
 
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))

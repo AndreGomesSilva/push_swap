@@ -70,7 +70,7 @@ void sort_great_chunk(t_stack **a, t_stack **b)
 	}
 }
 
-void init_sort_chunk(t_stack **a, t_stack**b)
+void init_sort_chunk_b(t_stack **a, t_stack**b)
 {
 	t_stack *lst;
 

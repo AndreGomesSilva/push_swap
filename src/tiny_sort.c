@@ -10,7 +10,9 @@ static int bigger_node(t_stack *first_node, t_stack *second_node)
 	else
 		return (FALSE);
 }
-static void simple_sort(t_stack **a)
+
+
+static void simple_sort_a(t_stack **a)
 {
 	t_stack *first_node;
 	t_stack *second_node;
@@ -49,5 +51,5 @@ void short_numbers(t_stack **a)
 
 	len = list_len(a);
 	if (len < 4)
-		simple_sort(a);
+		simple_sort_a(a);
 }

@@ -70,6 +70,26 @@ static void move_the_smallest(t_stack **a, t_stack **b, int chunk)
 	}
 }
 
+void finish(t_stack **a, t_stack **b)
+{
+	t_stack *first_node;
+	t_stack *second_node;
+
+	first_node = *b;
+	second_node = first_node->next;
+	if (first_node->value < second_node->value)
+	{
+		swap_node(b, "sb\n");
+		push_to_stack(b, a, "pa\n");
+		push_to_stack(b, a, "pa\n");
+	}
+	else
+	{
+		push_to_stack(b, a, "pa\n");
+		push_to_stack(b, a, "pa\n");
+	}
+}
+
 void move_numbers(t_stack **a,t_stack **b)
 {
 	int great_chunk_a;
@@ -84,8 +104,22 @@ void move_numbers(t_stack **a,t_stack **b)
 		mark_chunk(b);
 	}
 	short_numbers(a);
-	init_sort_chunk(a, b);
-	init_sort_chunk(a, b);
-	init_sort_chunk(a, b);
-
+	init_sort_chunk_b(a, b);
+	while (list_len(b) > 3)
+	{
+		while(check_ascending_order(a, great_chunk_a) && list_len(b) > 3)
+		{
+			init_sort_chunk_b(a, b);
+			first_node = *a;
+			great_chunk_a = first_node->chunk;
+		}
+		while (!check_ascending_order(a, great_chunk_a) && list_len_chunk(a, great_chunk_a) > 2)
+		{
+			init_sort_chunk_a(a, b);
+			first_node = *a;
+			great_chunk_a = first_node->chunk;
+		}
+	}
+	if (list_len(b) == 2)
+		finish(a, b);
 }
