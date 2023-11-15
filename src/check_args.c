@@ -1,13 +1,21 @@
-//
-// Created by angomes- on 11/4/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_args.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/14 21:16:39 by angomes-          #+#    #+#             */
+/*   Updated: 2023/11/14 21:16:44 by angomes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
-int 	check_limits(char **str)
+int	check_limits(char **str)
 {
-	long int number;
-	int i;
+	long int	number;
+	int			i;
 
 	i = 0;
 	number = 0;
@@ -18,13 +26,13 @@ int 	check_limits(char **str)
 			return (FALSE);
 		i++;
 	}
-	return(TRUE);
+	return (TRUE);
 }
 
-static int number_is_equal(char **str)
+static int	number_is_equal(char **str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (str[i])
@@ -41,10 +49,10 @@ static int number_is_equal(char **str)
 	return (FALSE);
 }
 
-static int args_is_digits(char **str)
+static int	args_is_digits(char **str)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (str[i])
@@ -52,9 +60,11 @@ static int args_is_digits(char **str)
 		j = 0;
 		while (str[i][j])
 		{
-			if(((str[i][j] == '-') || (str[i][j]) == '+')  && (!ft_isdigit(str[i][j + 1])))
+			if (((str[i][j] == '-') || (str[i][j]) == '+')
+				&& (!ft_isdigit(str[i][j + 1])))
 				return (FALSE);
-			if ((!ft_isdigit(str[i][j]) && ((str[i][j] != '-') && (str[i][j] != '+'))))
+			if ((!ft_isdigit(str[i][j])
+				&& ((str[i][j] != '-') && (str[i][j] != '+'))))
 				return (FALSE);
 			j++;
 		}
@@ -63,7 +73,7 @@ static int args_is_digits(char **str)
 	return (TRUE);
 }
 
-int is_valid_args(char **str)
+int	is_valid_args(char **str)
 {
 	if (check_limits(str) && args_is_digits(str))
 	{

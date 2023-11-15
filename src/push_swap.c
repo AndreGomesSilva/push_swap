@@ -64,10 +64,10 @@ int	main(int ac, char **av)
 //			print_stack(&b);
 		}
 		else
-			ft_printf("Error");
+			ft_printf("Error\n");
 	}
 	else
-		ft_printf("Error");
+		ft_printf("Error\n");
 	free_node(a);
-	return(EXIT_OK);
+	return (EXIT_OK);
 }
