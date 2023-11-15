@@ -64,10 +64,10 @@ int	main(int ac, char **av)
 //			print_stack(&b);
 		}
 		else
-			ft_printf("invalid args\n");
+			ft_printf("Error");
 	}
 	else
-		ft_printf("We have a problem\n");
+		ft_printf("Error");
 	free_node(a);
 	return(EXIT_OK);
 }

@@ -39,12 +39,12 @@ static void sort_chunk(t_stack **a, t_stack **b)
 					push_to_stack(b, a, "pa\n");
 					first_node = *b;
 				}
-			if (first_node->value > mid)
+			if (first_node != NULL && first_node->value > mid)
 			{
 				push_to_stack(b, a, "pa\n");
 				first_node = *b;
 			}
-			if (first_node->value <=  mid && check_chunk_great_node(first_node, mid, target_chuck))
+			if (first_node != NULL && first_node->value <=  mid && check_chunk_great_node(first_node, mid, target_chuck))
 			{
 				rotate_list(b, "rb\n");
 				first_node = *b;
@@ -52,7 +52,7 @@ static void sort_chunk(t_stack **a, t_stack **b)
 			}
 		}
 	}
-	while (count_rotate--)
+	while (first_node != NULL && count_rotate--)
 		reverse_rotate(b, "rrb\n");
 }
 
