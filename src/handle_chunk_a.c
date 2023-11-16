@@ -30,12 +30,12 @@ void move_chunk_a_to_b(t_stack **a, t_stack **b)
 	target_chunk = first_node->chunk;
 	set_middle_chunk(a, target_chunk);
 	mid = first_node->middle_value;
-	while (check_node_small(first_node, mid, target_chunk))
+	while (check_node_small(first_node, mid, target_chunk) && !check_ascending_order(a, target_chunk))
 	{
 		if (first_node->value < mid)
 		{
 			push_to_stack(a, b, "pb\n");
-			first_node = *a	;
+			first_node = *a;
 		}
 		else if (first_node->next->value < mid && first_node->next->chunk == target_chunk)
 		{

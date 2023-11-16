@@ -105,9 +105,11 @@ void move_numbers(t_stack **a,t_stack **b)
 	}
 	short_numbers(a);
 	init_sort_chunk_b(a, b);
+	first_node = *a;
+	great_chunk_a = first_node->chunk;
 	while (list_len(b) > 3)
 	{
-		while(check_ascending_order(a, great_chunk_a) && list_len(b) > 3)
+		while(check_ascending_order(a, great_chunk_a) && list_len(b) > 2)
 		{
 			init_sort_chunk_b(a, b);
 			first_node = *a;

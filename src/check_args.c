@@ -63,6 +63,8 @@ static int	args_is_digits(char **str)
 			if (((str[i][j] == '-') || (str[i][j]) == '+')
 				&& (!ft_isdigit(str[i][j + 1])))
 				return (FALSE);
+			if (str[i][j] == '-' && j != 0)
+				return (FALSE);
 			if ((!ft_isdigit(str[i][j])
 				&& ((str[i][j] != '-') && (str[i][j] != '+'))))
 				return (FALSE);
