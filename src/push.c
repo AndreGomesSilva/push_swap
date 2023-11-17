@@ -4,13 +4,13 @@
 
 #include "../inc/push_swap.h"
 
-void push_to_stack(t_stack **src, t_stack **dest, char *flag)
+void	push_to_stack(t_stack **src, t_stack **dest, char *flag)
 {
-	t_stack *first_src;
-	t_stack *first_dest;
-	t_stack  *next_src;
+	t_stack	*first_src;
+	t_stack	*first_dest;
+	t_stack	*next_src;
 
-	if(!src || !*src)
+	if (!src || !*src)
 		return ;
 	first_src = *src;
 	first_dest = *dest;
@@ -18,7 +18,8 @@ void push_to_stack(t_stack **src, t_stack **dest, char *flag)
 	if (next_src)
 		next_src->previous = NULL;
 	*src = next_src;
-	if (!*dest) {
+	if (!*dest)
+	{
 		*dest = first_src;
 		first_src->next = NULL;
 	}
@@ -28,6 +29,5 @@ void push_to_stack(t_stack **src, t_stack **dest, char *flag)
 		*dest = first_src;
 		first_dest->previous = first_src;
 	}
-
 	ft_putstr_fd(flag, STDOUT_FILENO);
 }

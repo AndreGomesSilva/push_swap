@@ -4,11 +4,11 @@
 
 #include "../inc/push_swap.h"
 
-void reverse_rotate(t_stack	**stack, char *flag)
+void	reverse_rotate(t_stack	**stack, char *flag)
 {
-	t_stack  *first_node;
-	t_stack  *end_node;
-	t_stack  *previous_node;
+	t_stack	*first_node;
+	t_stack	*end_node;
+	t_stack	*previous_node;
 
 	first_node = *stack;
 	end_node = last_node(*stack);

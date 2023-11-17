@@ -27,11 +27,11 @@
 //	}
 //}
 
-void init_stack(t_stack **stack, char **args)
+void	init_stack(t_stack **stack, char **args)
 {
-	int i;
-	i = 0;
+	int	i;
 
+	i = 0;
 	while (args[i])
 	{
 		new_node(stack, ft_atoi(args[i]));
@@ -41,31 +41,26 @@ void init_stack(t_stack **stack, char **args)
 
 int	main(int ac, char **av)
 {
-	t_stack *a;
-	t_stack *b;
-	char **str;
+	t_stack	*a;
+	t_stack	*b;
+	char	**str;
 
 	a = NULL;
 	b = NULL;
 	if (ac >= 3)
 	{
 		str = &av[1];
-		if(is_valid_args(str))
+		if (is_valid_args(str))
 		{
 			init_stack(&a, str);
-//			print_stack(&a);
 			if (ac <= 4 && !check_ascending_order_all(&a))
 				short_numbers(&a);
 			else if (!check_ascending_order_all(&a))
 				move_numbers(&a, &b);
-//			ft_printf("------------------------------\n");
-//			print_stack(&a);
 		}
 		else
 			ft_printf("Error\n");
+		free_node(a);
 	}
-	else
-		ft_printf("Error\n");
-	free_node(a);
 	return (EXIT_OK);
 }

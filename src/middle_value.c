@@ -4,9 +4,9 @@
 
 #include "../inc/push_swap.h"
 
-static void set_value_to_lst(t_stack **stack, int mid)
+static void	set_value_to_lst(t_stack **stack, int mid)
 {
-	t_stack *lst;
+	t_stack	*lst;
 
 	lst = *stack;
 	while (lst)
@@ -16,11 +16,11 @@ static void set_value_to_lst(t_stack **stack, int mid)
 	}
 }
 
-static void sort_array(t_stack **stack, int *array, int len)
+static void	sort_array(t_stack **stack, int *array, int len)
 {
-	int i;
-	int key;
-	int j;
+	int	i;
+	int	key;
+	int	j;
 
 	i = 1;
 	while (i < len)
@@ -38,14 +38,14 @@ static void sort_array(t_stack **stack, int *array, int len)
 	set_value_to_lst(stack, array[len / 2]);
 }
 
-static void fill_array(t_stack **stack, int *array, int len)
+static void	fill_array(t_stack **stack, int *array, int len)
 {
-	t_stack *lst;
-	int i;
+	t_stack	*lst;
+	int		i;
 
 	lst = *stack;
 	i = 0;
-	while(i < len && lst)
+	while (i < len && lst)
 	{
 		array[i] = lst->value;
 		lst = lst->next;
@@ -53,10 +53,10 @@ static void fill_array(t_stack **stack, int *array, int len)
 	}
 }
 
-void set_middle_value(t_stack **stack)
+void	set_middle_value(t_stack **stack)
 {
-	int *array;
-	int len;
+	int	*array;
+	int	len;
 
 	len = list_len(stack);
 	array = ft_calloc(len, sizeof(int));

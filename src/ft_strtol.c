@@ -12,10 +12,10 @@
 
 #include "../inc/push_swap.h"
 
-long int convert_base(char *str, int base)
+long int	convert_base(char *str, int base)
 {
-	int digit;
-	long int result;
+	int			digit;
+	long int	result;
 
 	digit = 0;
 	result = 0;
@@ -28,27 +28,26 @@ long int convert_base(char *str, int base)
 		else if (*str >= 'A' && *str <= 'Z')
 			digit = *str - 'A' + 10;
 		else
-			break;
+			break ;
 		if (digit >= base)
-			break;
+			break ;
 		result = result * base + digit;
 		str++;
 	}
 	return (result);
 }
 
-
-long int ft_strtol(char *str, char **endptr, int base)
+long int	ft_strtol(char *str, char **endptr, int base)
 {
-	long int result;
-	int sign;
+	long int	result;
+	int			sign;
 
 	result = 0;
 	sign = 1;
 	if (base < 2 || base > 36)
 	{
 		if (endptr != NULL)
-			*endptr = (char*) str;
+			*endptr = (char *) str;
 		return (0);
 	}
 	while (*str == ' ' || *str == '\t' || *str == '\r')
@@ -61,6 +60,6 @@ long int ft_strtol(char *str, char **endptr, int base)
 	}
 	result = convert_base(str, base);
 	if (endptr != NULL)
-		*endptr = (char*)str;
-	return(result *sign);
+		*endptr = (char *)str;
+	return (result * sign);
 }

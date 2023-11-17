@@ -14,8 +14,8 @@
 
 int	list_len(t_stack **stack)
 {
-	int count;
-	t_stack *current;
+	int		count;
+	t_stack	*current;
 
 	count = 0;
 	current = *stack;
@@ -32,7 +32,7 @@ t_stack *last_node(t_stack *stack)
 	t_stack *temp_node;
 
 	temp_node = stack;
-	while(stack->next != NULL)
+	while (stack->next != NULL)
 	{
 		temp_node = stack->next;
 		stack = temp_node;
@@ -40,26 +40,26 @@ t_stack *last_node(t_stack *stack)
 	return (temp_node);
 }
 
-void new_node(t_stack **stack, int value)
+void	new_node(t_stack **stack, int value)
 {
-  t_stack *node;
-  t_stack *temp_node;
+	t_stack	*node;
+	t_stack	*temp_node;
 
-  node = (t_stack*) ft_calloc(1, sizeof(t_stack));
-  if (!node)
-    return ;
-  node->next = NULL;
-  node->value = value;
-  if (*stack == NULL)
-  {
-    node->previous = NULL;
-    *stack = node;
-  }
-  else
-  {
-	 temp_node = last_node(*stack);
-	 temp_node->next = node;
-	 node->previous = temp_node;
-	 node->next = NULL;
-  }
+	node = (t_stack *) ft_calloc(1, sizeof(t_stack));
+	if (!node)
+		return ;
+	node->next = NULL;
+	node->value = value;
+	if (*stack == NULL)
+	{
+		node->previous = NULL;
+		*stack = node;
+	}
+	else
+	{
+		temp_node = last_node(*stack);
+		temp_node->next = node;
+		node->previous = temp_node;
+		node->next = NULL;
+	}
 }

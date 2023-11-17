@@ -12,9 +12,9 @@
 
 #include "../inc/push_swap.h"
 
-int 	check_ascending_order_all(t_stack **a)
+int	check_ascending_order_all(t_stack **a)
 {
-	t_stack *lst;
+	t_stack	*lst;
 
 	lst = *a;
 	while (lst)
@@ -29,14 +29,14 @@ int 	check_ascending_order_all(t_stack **a)
 }
 
 
-int 	check_ascending_order(t_stack **a, int chunk)
+int	check_ascending_order(t_stack **a, int chunk)
 {
-	t_stack *lst;
-	t_stack *next_node;
-	int 	current_value;
+	t_stack	*lst;
+	t_stack	*next_node;
+	int		current_value;
 
 	lst = *a;
-	while(lst)
+	while (lst)
 	{
 		while (lst->chunk == chunk && lst->next != NULL)
 		{
@@ -46,20 +46,20 @@ int 	check_ascending_order(t_stack **a, int chunk)
 				return (FALSE);
 			lst = lst ->next;
 		}
-		if(lst != NULL)
+		if (lst != NULL)
 			lst = lst->next;
 	}
 	return (TRUE);
 }
 
-int 	check_descending_order(t_stack **b, int chunk)
+int	check_descending_order(t_stack **b, int chunk)
 {
-	t_stack *lst;
-	t_stack *next_node;
-	int 	current_value;
+	t_stack	*lst;
+	t_stack	*next_node;
+	int		current_value;
 
 	lst = *b;
-	while(lst)
+	while (lst)
 	{
 		while (lst->chunk == chunk && lst->next != NULL)
 		{
@@ -69,7 +69,7 @@ int 	check_descending_order(t_stack **b, int chunk)
 				return (FALSE);
 			lst = lst ->next;
 		}
-		if(lst != NULL)
+		if (lst != NULL)
 			lst = lst->next;
 	}
 	return (TRUE);

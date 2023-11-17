@@ -12,19 +12,20 @@
 
 #include "../inc/push_swap.h"
 
-int free_node(t_stack *head) {
-	t_stack *temp_node;
+int	free_node(t_stack *head)
+{
+	t_stack	*temp_node;
 
 	if (head)
 	{
-		while(head)
+		while (head)
 		{
 			temp_node = head->next;
 			free(head);
 			head = temp_node;
 		}
-		return(1);
+		return (TRUE);
 	}
 	else
-		return (0);
+		return (FALSE);
 }
