@@ -14,7 +14,7 @@ HEADERS = -I ./inc
 CFLAGS = -Wall -Wextra -Werror
 LEAKS = valgrind --leak-check=full --show-leak-kinds=all
 RM = rm -f
-CC = gcc -g
+CC = gcc -g -O3
 SRCS_DIR = src
 OBJS_DIR = obj
 BIN = push_swap

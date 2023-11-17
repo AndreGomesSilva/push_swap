@@ -1,6 +1,14 @@
-//
-// Created by silva on 12/11/2023.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   handle_large_numbers.c                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/17 14:46:59 by angomes-          #+#    #+#             */
+/*   Updated: 2023/11/17 14:47:32 by angomes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
@@ -20,7 +28,7 @@ static int	check_node_small(t_stack *stack, int check, int chunk)
 
 void	zero_chunk(t_stack **stack)
 {
-	t_stack *lst;
+	t_stack	*lst;
 
 	lst = *stack;
 	while (lst)

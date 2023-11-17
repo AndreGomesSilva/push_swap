@@ -1,6 +1,14 @@
-//
-// Created by angomes- on 11/13/23.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   move_a_to_b.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/17 14:47:51 by angomes-          #+#    #+#             */
+/*   Updated: 2023/11/17 14:47:54 by angomes-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "../inc/push_swap.h"
 
@@ -23,7 +31,7 @@ void	move_a(t_stack **a, t_stack **b)
 			first_a->chunk += 1;
 			push_to_stack(a, b, "pb\n");
 		}
-		else if (first_a->value >=  mid)
+		else if (first_a->value >= mid)
 		{
 			rotate_list(a, "ra\n");
 			count_rotate++;

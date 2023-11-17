@@ -1,4 +1,3 @@
-
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
@@ -6,26 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/25 15:10:21 by angomes-          #+#    #+#             */
-/*   Updated: 2023/11/01 16:27:00 by angomes-         ###   ########.fr       */
+/*   Created: 2023/11/17 14:48:23 by angomes-          #+#    #+#             */
+/*   Updated: 2023/11/17 14:48:36 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/push_swap.h"
-
-//void print_stack(t_stack **stack) {
-//
-//	t_stack *current;
-//
-//	current = *stack;
-//	while (current)
-//	{
-//		ft_printf("value ->-> %d\n", current->value);
-//		ft_printf("mid -> %d\n", current->middle_value);
-//		ft_printf("chunk -> %d\n", current->chunk);
-//		current = current->next;
-//	}
-//}
 
 void	init_stack(t_stack **stack, char **args)
 {
@@ -59,8 +44,10 @@ int	main(int ac, char **av)
 				move_numbers(&a, &b);
 		}
 		else
-			ft_printf("Error\n");
+			write(2, "Error\n", 6);
 		free_node(a);
 	}
+	else if (av[1][0] == '\0')
+		write(2, "Error\n", 6);
 	return (EXIT_OK);
 }

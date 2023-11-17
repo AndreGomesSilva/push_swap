@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 16:38:26 by angomes-          #+#    #+#             */
-/*   Updated: 2023/11/04 11:44:29 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:47:31 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ int	list_len(t_stack **stack)
 	return (count);
 }
 
-t_stack *last_node(t_stack *stack)
+t_stack	*last_node(t_stack *stack)
 {
-	t_stack *temp_node;
+	t_stack	*temp_node;
 
 	temp_node = stack;
 	while (stack->next != NULL)

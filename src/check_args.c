@@ -6,7 +6,7 @@
 /*   By: angomes- <angomes-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 21:16:39 by angomes-          #+#    #+#             */
-/*   Updated: 2023/11/14 21:16:44 by angomes-         ###   ########.fr       */
+/*   Updated: 2023/11/17 14:47:46 by angomes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,11 +78,7 @@ static int	args_is_digits(char **str)
 int	is_valid_args(char **str)
 {
 	if (check_limits(str) && args_is_digits(str))
-	{
 		if (!number_is_equal(str))
-		{
 			return (TRUE);
-		}
-	}
 	return (FALSE);
 }

@@ -13,10 +13,8 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # define EXIT_OK 0
-# define EXIT_FAIL 1
 # define TRUE 1
 # define FALSE 0
-# define ERROR (-1)
 # define LIMIT_MAX_INT 2147483647
 # define LIMIT_MIN_INT (-2147483648)
 
@@ -53,7 +51,5 @@ int			remain_great_node(t_stack *stack, int check, int chunk);
 int			remain_small_node(t_stack *stack, int check, int chunk);
 void		set_middle_chunk(t_stack **stack, int chunk);
 int			check_ascending_order(t_stack **a, int chunk);
-//int 	check_descending_order(t_stack **b, int chunk);
-//int great_chunk_value(t_stack **a, t_stack **b);
 
 #endif
