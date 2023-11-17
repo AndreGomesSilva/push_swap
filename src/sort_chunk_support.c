@@ -19,7 +19,7 @@ int	list_len_chunk(t_stack **stack, int chunk)
 	return (count);
 }
 
-int	check_chunk_great_node(t_stack *stack, int check, int chunk)
+int	remain_great_node(t_stack *stack, int check, int chunk)
 {
 	t_stack *lst;
 
@@ -27,6 +27,20 @@ int	check_chunk_great_node(t_stack *stack, int check, int chunk)
 	while (lst)
 	{
 		if (lst->chunk == chunk && lst->value > check)
+			return (TRUE);
+		lst = lst->next;
+	}
+	return(FALSE);
+}
+
+int	remain_small_node(t_stack *stack, int check, int chunk)
+{
+	t_stack *lst;
+
+	lst = stack;
+	while (lst)
+	{
+		if (lst->chunk == chunk && lst->value < check)
 			return (TRUE);
 		lst = lst->next;
 	}

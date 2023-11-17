@@ -12,6 +12,23 @@
 
 #include "../inc/push_swap.h"
 
+int 	check_ascending_order_all(t_stack **a)
+{
+	t_stack *lst;
+
+	lst = *a;
+	while (lst)
+	{
+		if (lst->next)
+			if (lst->value > lst->next->value)
+				return (FALSE);
+		if (lst != NULL)
+		lst = lst ->next;
+	}
+	return (TRUE);
+}
+
+
 int 	check_ascending_order(t_stack **a, int chunk)
 {
 	t_stack *lst;

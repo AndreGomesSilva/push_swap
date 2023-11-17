@@ -37,10 +37,10 @@ FILES =\
 	handle_large_numbers \
 	middle_value \
 	check_order \
-	handle_chunk_b \
+	move_a_to_b \
 	middle_value_chunk \
 	sort_chunk_support \
-	handle_chunk_a \
+	move_b_to_a \
 
 
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))

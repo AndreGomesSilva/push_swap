@@ -46,12 +46,14 @@ void short_numbers(t_stack **a);
 long int ft_strtol(char *str, char **endptr, int base);
 void move_numbers(t_stack **a,t_stack **b);
 void set_middle_value(t_stack **stack);
-int	check_chunk_great_node(t_stack *stack, int check, int chunk);
+void move_b_to_a(t_stack **a, t_stack **b);
+void	move_a_to_b(t_stack **a, t_stack **b);
+int 	check_ascending_order_all(t_stack **a);
+int	remain_great_node(t_stack *stack, int check, int chunk);
+int	remain_small_node(t_stack *stack, int check, int chunk);
 void set_middle_chunk(t_stack **stack, int chunk);
 int 	check_ascending_order(t_stack **a, int chunk);
 int 	check_descending_order(t_stack **b, int chunk);
-void init_sort_chunk_b(t_stack **a, t_stack**b);
-void init_sort_chunk_a(t_stack **a, t_stack **b);
 int great_chunk_value(t_stack **a, t_stack **b);
 
 #endif
