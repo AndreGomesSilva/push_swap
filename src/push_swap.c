@@ -54,9 +54,9 @@ int	main(int ac, char **av)
 		{
 			init_stack(&a, str);
 //			print_stack(&a);
-			if (ac <= 4)
+			if (ac <= 4 && !check_ascending_order_all(&a))
 				short_numbers(&a);
-			else
+			else if (!check_ascending_order_all(&a))
 				move_numbers(&a, &b);
 //			ft_printf("------------------------------\n");
 //			print_stack(&a);
