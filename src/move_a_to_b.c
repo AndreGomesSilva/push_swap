@@ -19,12 +19,17 @@ void move_a(t_stack **a, t_stack **b)
 	while (remain_small_node(first_a, mid, target_chunk))
 		{
 			if (first_a->value < mid)
+			{
+				first_a->chunk += 1;
 				push_to_stack(a, b, "pb\n");
+			}
 			else if (first_a->value >=  mid)
 			{
 				rotate_list(a, "ra\n");
 				count_rotate++;
 			}
+			else if (check_ascending_order(a, target_chunk))
+				break;
 			first_a = *a;
 		}
 	while(first_a != NULL && count_rotate--)
@@ -40,11 +45,6 @@ void move_a(t_stack **a, t_stack **b)
 
 void	move_a_to_b(t_stack **a, t_stack **b)
 {
-	t_stack *first_node;
-	int chunk;
-
-	first_node = *a;
-	chunk = first_node->chunk;
-	while (!check_ascending_order_all(a) && list_len_chunk(a, chunk) != 2)
+	while (!check_ascending_order_all(a))
 		move_a(a, b);
 }

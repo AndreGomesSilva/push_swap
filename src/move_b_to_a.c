@@ -16,7 +16,7 @@ void move_b(t_stack **a, t_stack **b)
 	target_chunk = first_b->chunk;
 	set_middle_chunk(b, target_chunk);
 	mid = first_b->middle_value;
-	while (remain_great_node(first_b, mid, target_chunk) && list_len_chunk(b, target_chunk) > 2)
+	while (first_b != NULL && remain_great_node(first_b, mid, target_chunk) && list_len_chunk(b, target_chunk) > 2)
 	{
 		if (first_b->value > mid)
 			push_to_stack(b, a, "pa\n");

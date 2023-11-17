@@ -82,26 +82,6 @@ static void move_the_smallest(t_stack **a, t_stack **b, int chunk)
 	}
 }
 
-//void finish(t_stack **a, t_stack **b)
-//{
-//	t_stack *first_node;
-//	t_stack *second_node;
-//
-//	first_node = *b;
-//	second_node = first_node->next;
-//	if (first_node->value < second_node->value)
-//	{
-//		swap_node(b, "sb\n");
-//		push_to_stack(b, a, "pa\n");
-//		push_to_stack(b, a, "pa\n");
-//	}
-//	else
-//	{
-//		push_to_stack(b, a, "pa\n");
-//		push_to_stack(b, a, "pa\n");
-//	}
-//}
-
 void move_numbers(t_stack **a,t_stack **b)
 {
 	while (list_len(a) > 3)
@@ -121,6 +101,4 @@ void move_numbers(t_stack **a,t_stack **b)
 			zero_chunk(a);
 		}
 	}
-//	if (list_len(b) == 2)
-//		finish(a, b);
 }

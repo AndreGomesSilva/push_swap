@@ -13,19 +13,19 @@
 
 #include "../inc/push_swap.h"
 
-void print_stack(t_stack **stack) {
-
-	t_stack *current;
-
-	current = *stack;
-	while (current)
-	{
-		ft_printf("value ->-> %d\n", current->value);
-		ft_printf("mid -> %d\n", current->middle_value);
-		ft_printf("chunk -> %d\n", current->chunk);
-		current = current->next;
-	}
-}
+//void print_stack(t_stack **stack) {
+//
+//	t_stack *current;
+//
+//	current = *stack;
+//	while (current)
+//	{
+//		ft_printf("value ->-> %d\n", current->value);
+//		ft_printf("mid -> %d\n", current->middle_value);
+//		ft_printf("chunk -> %d\n", current->chunk);
+//		current = current->next;
+//	}
+//}
 
 void init_stack(t_stack **stack, char **args)
 {
@@ -53,7 +53,7 @@ int	main(int ac, char **av)
 		if(is_valid_args(str))
 		{
 			init_stack(&a, str);
-			print_stack(&a);
+//			print_stack(&a);
 			if (ac <= 4)
 				short_numbers(&a);
 			else
