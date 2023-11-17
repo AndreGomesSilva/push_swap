@@ -47,7 +47,10 @@ int	main(int ac, char **av)
 			write(2, "Error\n", 6);
 		free_node(a);
 	}
-	else if (av[1][0] == '\0')
-		write(2, "Error\n", 6);
+	else if (av[1])
+	{
+		if (av[1][0] == '\0' || !is_valid_args(&av[1]))
+			write(2, "Error\n", 6);
+	}
 	return (EXIT_OK);
 }

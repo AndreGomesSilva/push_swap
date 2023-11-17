@@ -19,6 +19,7 @@
 # define LIMIT_MIN_INT (-2147483648)
 
 # include "../libraries/libft/inc/libft.h"
+# include <unistd.h>
 # include <stdlib.h>
 
 typedef struct s_stack
@@ -35,14 +36,14 @@ void		new_node(t_stack **stack, int value);
 t_stack		*last_node(t_stack *stack);
 int			free_node(t_stack *head);
 void		swap_node(t_stack **stack, char *flag);
-void		rotate_list(t_stack **stack, char* flag);
+void		rotate_list(t_stack **stack, char *flag);
 void		push_to_stack(t_stack **src, t_stack **dest, char *flag);
 int			list_len(t_stack **stack);
 int			list_len_chunk(t_stack **stack, int chunk);
 void		reverse_rotate(t_stack	**stack, char *flag);
 void		short_numbers(t_stack **a);
 long int	ft_strtol(char *str, char **endptr, int base);
-void		move_numbers(t_stack **a,t_stack **b);
+void		move_numbers(t_stack **a, t_stack **b);
 void		set_middle_value(t_stack **stack);
 void		move_b_to_a(t_stack **a, t_stack **b);
 void		move_a_to_b(t_stack **a, t_stack **b);
