@@ -12,6 +12,25 @@
 
 #include "../inc/push_swap.h"
 
+static void	finish_move_in_b(t_stack **a, t_stack **b, int count, int chunk)
+{
+	t_stack	*first_b;
+
+	first_b = *b;
+	while (first_b != NULL && count--)
+		reverse_rotate(b, "rrb\n");
+	if (list_len_chunk(b, chunk) == 2)
+	{
+		first_b = *b;
+		if (first_b->value < first_b->next->value)
+			swap_node(b, "sb\n");
+		push_to_stack(b, a, "pa\n");
+		push_to_stack(b, a, "pa\n");
+	}
+	else if (list_len_chunk(b, chunk) == 1)
+		push_to_stack(b, a, "pa\n");
+}
+
 void	move_b(t_stack **a, t_stack **b)
 {
 	t_stack	*first_b;
@@ -36,18 +55,7 @@ void	move_b(t_stack **a, t_stack **b)
 		}
 		first_b = *b;
 	}
-	while (first_b != NULL && count_rotate--)
-		reverse_rotate(b, "rrb\n");
-	if (list_len_chunk(b, target_chunk) == 2)
-	{
-		first_b = *b;
-		if (first_b->value < first_b->next->value)
-			swap_node(b, "sb\n");
-		push_to_stack(b, a, "pa\n");
-		push_to_stack(b, a, "pa\n");
-	}
-	else if (list_len_chunk(b, target_chunk) == 1)
-		push_to_stack(b, a, "pa\n");
+	finish_move_in_b(a, b, count_rotate, target_chunk);
 }
 
 void	move_b_to_a(t_stack **a, t_stack **b)

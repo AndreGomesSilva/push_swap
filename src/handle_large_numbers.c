@@ -84,10 +84,8 @@ static void	move_the_smallest(t_stack **a, t_stack **b, int chunk)
 		}
 		if (first_node->value >= mid
 			&& check_node_small(first_node, mid, chunk))
-		{
 			rotate_list(a, "ra\n");
-			first_node = *a;
-		}
+		first_node = *a;
 	}
 }
 

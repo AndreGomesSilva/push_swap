@@ -12,19 +12,29 @@
 
 #include "../inc/push_swap.h"
 
-void	move_a(t_stack **a, t_stack **b)
+static void	finish_move_in_a(t_stack **a, int count_rotate, int chunk)
 {
 	t_stack	*first_a;
-	int		target_chunk;
+
+	first_a = *a;
+	while (first_a != NULL && count_rotate--)
+		reverse_rotate(a, "rra\n");
+	first_a = *a;
+	if (list_len_chunk(a, chunk) == 2)
+		if (first_a->value > first_a->next->value)
+			swap_node(a, "sa\n");
+}
+
+static void	move_smallest_chunk(t_stack **a, t_stack **b, int mid, int chunk)
+{
+	t_stack	*first_a;
 	int		count_rotate;
-	int		mid;
 
 	first_a = *a;
 	count_rotate = 0;
-	target_chunk = first_a->chunk;
-	set_middle_chunk(a, target_chunk);
+	set_middle_chunk(a, chunk);
 	mid = first_a->middle_value;
-	while (remain_small_node(first_a, mid, target_chunk))
+	while (remain_small_node(first_a, mid, chunk))
 	{
 		if (first_a->value < mid)
 		{
@@ -36,18 +46,24 @@ void	move_a(t_stack **a, t_stack **b)
 			rotate_list(a, "ra\n");
 			count_rotate++;
 		}
-		else if (check_ascending_order(a, target_chunk))
+		else if (check_ascending_order(a, chunk))
 			break ;
 		first_a = *a;
 	}
-	while (first_a != NULL && count_rotate--)
-		reverse_rotate(a, "rra\n");
-	if (list_len_chunk(a, target_chunk) == 2)
-	{
-		first_a = *a;
-		if (first_a->value > first_a->next->value)
-			swap_node(a, "sa\n");
-	}
+	finish_move_in_a(a, count_rotate, chunk);
+}
+
+void	move_a(t_stack **a, t_stack **b)
+{
+	t_stack	*first_a;
+	int		target_chunk;
+	int		mid;
+
+	first_a = *a;
+	target_chunk = first_a->chunk;
+	set_middle_chunk(a, target_chunk);
+	mid = first_a->middle_value;
+	move_smallest_chunk(a, b, mid, target_chunk);
 }
 
 void	move_a_to_b(t_stack **a, t_stack **b)
