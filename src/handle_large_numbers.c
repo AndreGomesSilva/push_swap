@@ -26,7 +26,7 @@ static int	check_node_small(t_stack *stack, int check, int chunk)
 	return (FALSE);
 }
 
-void	zero_chunk(t_stack **stack)
+static void	zero_chunk(t_stack **stack)
 {
 	t_stack	*lst;
 
@@ -38,7 +38,7 @@ void	zero_chunk(t_stack **stack)
 	}
 }
 
-void	mark_chunk(t_stack **stack)
+static void	mark_chunk(t_stack **stack)
 {
 	t_stack	*lst;
 	int		great_c;

@@ -26,5 +26,5 @@ void	reverse_rotate(t_stack	**stack, char *flag)
 	end_node->previous = NULL;
 	previous_node->next = NULL;
 	*stack = end_node;
-	ft_putstr_fd(flag, STDOUT_FILENO);
+	ft_putstr_fd(flag, 1);
 }

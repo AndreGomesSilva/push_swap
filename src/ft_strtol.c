@@ -12,7 +12,7 @@
 
 #include "../inc/push_swap.h"
 
-long int	convert_base(char *str, int base)
+static long int	convert_base(char *str, int base)
 {
 	int			digit;
 	long int	result;

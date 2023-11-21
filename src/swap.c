@@ -32,5 +32,5 @@ void	swap_node(t_stack **stack, char *flag)
 		first_node->next = NULL;
 	first_node->previous = second_node;
 	*stack = second_node;
-	ft_putstr_fd(flag, STDOUT_FILENO);
+	ft_putstr_fd(flag, 1);
 }

@@ -28,5 +28,5 @@ void	rotate_list(t_stack **stack, char *flag)
 	first_node->next = NULL;
 	next_node->previous = NULL;
 	*stack = next_node;
-	ft_putstr_fd(flag, STDOUT_FILENO);
+	ft_putstr_fd(flag, 1);
 }

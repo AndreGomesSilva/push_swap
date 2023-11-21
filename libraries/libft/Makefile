@@ -12,7 +12,7 @@
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 HEADER = ./inc
 CFLAGS = -Wall -Wextra -Werror -I$(HEADER)
 AR = ar -rcs

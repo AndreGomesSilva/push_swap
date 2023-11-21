@@ -37,5 +37,5 @@ void	push_to_stack(t_stack **src, t_stack **dest, char *flag)
 		*dest = first_src;
 		first_dest->previous = first_src;
 	}
-	ft_putstr_fd(flag, STDOUT_FILENO);
+	ft_putstr_fd(flag, 1);
 }

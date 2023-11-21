@@ -12,7 +12,7 @@
 
 #include "../inc/push_swap.h"
 
-void	init_stack(t_stack **stack, char **args)
+static void	init_stack(t_stack **stack, char **args)
 {
 	int	i;
 

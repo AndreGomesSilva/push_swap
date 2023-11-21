@@ -14,14 +14,13 @@ HEADERS = -I ./inc
 CFLAGS = -Wall -Wextra -Werror
 LEAKS = valgrind --leak-check=full --show-leak-kinds=all
 RM = rm -f
-CC = gcc -g -O3
+CC = cc
 SRCS_DIR = src
 OBJS_DIR = obj
 BIN = push_swap
 NAME = $(BIN)
 LIBFT_PATH = libraries/libft
 LIBFT = $(LIBFT_PATH)/libft.a
-ARGS = 12 32
 
 FILES =\
 	push_swap \
@@ -42,7 +41,6 @@ FILES =\
 	sort_chunk_support \
 	move_b_to_a \
 
-
 OBJS = $(addprefix $(OBJS_DIR)/, $(addsuffix .o, $(FILES)))
 
 all: $(NAME)
@@ -55,9 +53,6 @@ $(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c | $(OBJS_DIR)
 
 $(LIBFT):
 	$(MAKE)	-C $(LIBFT_PATH)
-
-play: all
-	./$(BIN) $(ARGS)
 
 $(OBJS_DIR):
 	@mkdir -p $(OBJS_DIR)
